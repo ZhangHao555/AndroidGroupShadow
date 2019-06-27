@@ -8,7 +8,7 @@
 
     <TextView
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:background="#ccc"
         android:gravity="center"
@@ -25,7 +25,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:background="#ff0"
         android:gravity="center"
@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:shadowColor="#FDF0E15C"
+        app:shadowColor="#FDE6D438"
         app:shadowRadius="10dp"
         app:xOffset="2dp"
         app:yOffset="3dp"
@@ -42,7 +42,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:background="#f00"
         android:gravity="center"
         android:text="Hello World!"
@@ -52,22 +52,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:shadowColor="#FDF55353"
         app:shadowRadius="10dp"
-
         app:xOffset="2dp"
         app:yOffset="3dp"
         tools:ignore="MissingPrefix" />
+
+
     <TextView
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#3A1AF5"
         android:gravity="center"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shadowColor="#EB5769E0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:shadowColor="#DA7988EB"
         app:shadowRadius="30dp"
         app:xOffset="2dp"
         app:yOffset="3dp"

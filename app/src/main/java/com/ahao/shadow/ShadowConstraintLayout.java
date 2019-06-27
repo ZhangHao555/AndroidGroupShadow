@@ -4,12 +4,9 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.RadialGradient;
 import android.graphics.RectF;
-import android.graphics.Shader;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.View;
@@ -32,10 +29,11 @@ public class ShadowConstraintLayout extends ConstraintLayout {
     public ShadowConstraintLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setWillNotDraw(false);
+        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
-        this.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
         matrix = new Matrix();
     }
 
@@ -59,15 +57,6 @@ public class ShadowConstraintLayout extends ConstraintLayout {
                             , shadowLayoutParams.yOffset, shadowLayoutParams.shadowColor);
                     paint.setColor(shadowLayoutParams.shadowColor);
                     canvas.drawRoundRect(rectF, shadowLayoutParams.shadowRoundRadius, shadowLayoutParams.shadowRoundRadius, paint);
-                    paint.setShadowLayer(0,0,0,0);
-
-                    rectF.left = child.getLeft() - shadowLayoutParams.shadowRadius;
-                    rectF.right = child.getRight() + shadowLayoutParams.shadowRadius;
-                    rectF.top = child.getTop() - shadowLayoutParams.shadowRadius;
-                    rectF.bottom = child.getBottom() + shadowLayoutParams.shadowRadius;
-                    paint.setStyle(Paint.Style.STROKE);
-                    canvas.drawRoundRect(rectF, shadowLayoutParams.shadowRoundRadius, shadowLayoutParams.shadowRoundRadius, paint);
-
                 }
             }
         }
@@ -103,6 +92,7 @@ public class ShadowConstraintLayout extends ConstraintLayout {
             shadowRadius = attributes.getDimension(R.styleable.ShadowConstraintLayout_shadowRadius, 0);
             shadowColor = attributes.getColor(R.styleable.ShadowConstraintLayout_shadowColor, 0);
             shadowRoundRadius = attributes.getDimension(R.styleable.ShadowConstraintLayout_shadowRoundRadius, 0);
+            attributes.recycle();
         }
 
         public LayoutParams(ViewGroup.LayoutParams source) {
