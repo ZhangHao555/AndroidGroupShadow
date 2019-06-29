@@ -87,11 +87,11 @@ public class ShadowConstraintLayout extends ConstraintLayout {
         public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
             TypedArray attributes = c.obtainStyledAttributes(attrs, R.styleable.ShadowConstraintLayout);
-            xOffset = attributes.getDimension(R.styleable.ShadowConstraintLayout_xOffset, 0);
-            yOffset = attributes.getDimension(R.styleable.ShadowConstraintLayout_yOffset, 0);
-            shadowRadius = attributes.getDimension(R.styleable.ShadowConstraintLayout_shadowRadius, 0);
-            shadowColor = attributes.getColor(R.styleable.ShadowConstraintLayout_shadowColor, 0);
-            shadowRoundRadius = attributes.getDimension(R.styleable.ShadowConstraintLayout_shadowRoundRadius, 0);
+            xOffset = attributes.getDimension(R.styleable.ShadowConstraintLayout_layout_xOffset, 0);
+            yOffset = attributes.getDimension(R.styleable.ShadowConstraintLayout_layout_yOffset, 0);
+            shadowRadius = attributes.getDimension(R.styleable.ShadowConstraintLayout_layout_shadowRadius, 0);
+            shadowColor = attributes.getColor(R.styleable.ShadowConstraintLayout_layout_shadowColor, 0);
+            shadowRoundRadius = attributes.getDimension(R.styleable.ShadowConstraintLayout_layout_shadowRoundRadius, 0);
             attributes.recycle();
         }
 

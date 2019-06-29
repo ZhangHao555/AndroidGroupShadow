@@ -16,11 +16,10 @@
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:shadowColor="#858383"
-        app:shadowRadius="10dp"
-        app:xOffset="2dp"
-        app:yOffset="3dp"
-        tools:ignore="MissingPrefix" />
+        app:layout_shadowColor="#858383"
+        app:layout_shadowRadius="10dp"
+        app:layout_xOffset="2dp"
+        app:layout_yOffset="3dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -33,11 +32,10 @@
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:shadowColor="#FDE6D438"
-        app:shadowRadius="10dp"
-        app:xOffset="2dp"
-        app:yOffset="3dp"
-        tools:ignore="MissingPrefix" />
+        app:layout_shadowColor="#FDE6D438"
+        app:layout_shadowRadius="10dp"
+        app:layout_xOffset="2dp"
+        app:layout_yOffset="3dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -50,12 +48,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:shadowColor="#FDF55353"
-        app:shadowRadius="10dp"
-        app:xOffset="2dp"
-        app:yOffset="3dp"
-        tools:ignore="MissingPrefix" />
-
+        app:layout_shadowColor="#FDF55353"
+        app:layout_shadowRadius="10dp"
+        app:layout_xOffset="2dp"
+        app:layout_yOffset="3dp" />
 
     <TextView
         android:layout_width="100dp"
@@ -70,10 +66,9 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:shadowColor="#DA7988EB"
-        app:shadowRadius="30dp"
-        app:xOffset="2dp"
-        app:yOffset="3dp"
-        tools:ignore="MissingPrefix" />
+        app:layout_shadowColor="#DA7988EB"
+        app:layout_shadowRadius="30dp"
+        app:layout_xOffset="2dp"
+        app:layout_yOffset="3dp" />
 
 </com.ahao.shadow.ShadowConstraintLayout>

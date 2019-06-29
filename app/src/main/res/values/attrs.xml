@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ShadowConstraintLayout">
-        <attr name="xOffset" format="dimension"/>
-        <attr name="yOffset" format="dimension" />
-        <attr name="shadowColor" format="color" />
-        <attr name="shadowRadius" format="dimension" />
-        <attr name="shadowRoundRadius" format="dimension" />
+        <attr name="layout_xOffset" format="dimension"/>
+        <attr name="layout_yOffset" format="dimension" />
+        <attr name="layout_shadowColor" format="color" />
+        <attr name="layout_shadowRadius" format="dimension" />
+        <attr name="layout_shadowRoundRadius" format="dimension" />
     </declare-styleable>
 
 </resources>
