@@ -1,4 +1,4 @@
-package com.ahao.shadow;
+package com.ahao.shadowlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,23 +10,22 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
-public class ShadowFrameLayout extends FrameLayout {
+public class ShadowRelativeLayout extends RelativeLayout {
     Paint paint;
     RectF rectF = new RectF();
     Matrix matrix;
 
-    public ShadowFrameLayout(Context context) {
+    public ShadowRelativeLayout(Context context) {
         this(context, null);
     }
 
-    public ShadowFrameLayout(Context context, AttributeSet attrs) {
+    public ShadowRelativeLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ShadowFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ShadowRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setWillNotDraw(false);
         paint = new Paint();
@@ -44,8 +43,8 @@ public class ShadowFrameLayout extends FrameLayout {
         for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
             ViewGroup.LayoutParams layoutParams = child.getLayoutParams();
-            if (layoutParams instanceof ShadowFrameLayout.LayoutParams) {
-                ShadowFrameLayout.LayoutParams shadowLayoutParams = (LayoutParams) layoutParams;
+            if (layoutParams instanceof ShadowRelativeLayout.LayoutParams) {
+                ShadowRelativeLayout.LayoutParams shadowLayoutParams = (LayoutParams) layoutParams;
                 if (shadowLayoutParams.shadowRadius > 0 && shadowLayoutParams.shadowColor != Color.TRANSPARENT) {
                     rectF.left = child.getLeft();
                     rectF.right = child.getRight();
@@ -62,7 +61,7 @@ public class ShadowFrameLayout extends FrameLayout {
         }
     }
 
-    public static class LayoutParams extends FrameLayout.LayoutParams {
+    public static class LayoutParams extends RelativeLayout.LayoutParams {
         private float xOffset;
         private float yOffset;
         private int shadowColor;
@@ -73,7 +72,7 @@ public class ShadowFrameLayout extends FrameLayout {
             super(width, height);
         }
 
-        public LayoutParams(ShadowFrameLayout.LayoutParams source) {
+        public LayoutParams(ShadowRelativeLayout.LayoutParams source) {
             super(source);
             xOffset = source.getXOffset();
             yOffset = source.getYOffset();
@@ -84,12 +83,12 @@ public class ShadowFrameLayout extends FrameLayout {
 
         public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
-            TypedArray attributes = c.obtainStyledAttributes(attrs, R.styleable.ShadowFrameLayout_Layout);
-            xOffset = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_xOffset, 0);
-            yOffset = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_yOffset, 0);
-            shadowRadius = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_shadowRadius, 0);
-            shadowColor = attributes.getColor(R.styleable.ShadowFrameLayout_Layout_layout_shadowColor, 0);
-            shadowRoundRadius = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_shadowRoundRadius, 0);
+            TypedArray attributes = c.obtainStyledAttributes(attrs, R.styleable.ShadowRelativeLayout_Layout);
+            xOffset = attributes.getDimension(R.styleable.ShadowRelativeLayout_Layout_layout_xOffset, 0);
+            yOffset = attributes.getDimension(R.styleable.ShadowRelativeLayout_Layout_layout_yOffset, 0);
+            shadowRadius = attributes.getDimension(R.styleable.ShadowRelativeLayout_Layout_layout_shadowRadius, 0);
+            shadowColor = attributes.getColor(R.styleable.ShadowRelativeLayout_Layout_layout_shadowColor, 0);
+            shadowRoundRadius = attributes.getDimension(R.styleable.ShadowRelativeLayout_Layout_layout_shadowRoundRadius, 0);
             attributes.recycle();
         }
 
@@ -138,19 +137,19 @@ public class ShadowFrameLayout extends FrameLayout {
         }
     }
 
-    public FrameLayout.LayoutParams generateLayoutParams(AttributeSet attrs) {
-        return new ShadowFrameLayout.LayoutParams(this.getContext(), attrs);
+    public ShadowRelativeLayout.LayoutParams generateLayoutParams(AttributeSet attrs) {
+        return new ShadowRelativeLayout.LayoutParams(this.getContext(), attrs);
     }
 
-    protected FrameLayout.LayoutParams generateDefaultLayoutParams() {
-        return new ShadowFrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+    protected ShadowRelativeLayout.LayoutParams generateDefaultLayoutParams() {
+        return new ShadowRelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
     }
 
-    protected FrameLayout.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
-        return new ShadowFrameLayout.LayoutParams(p);
+    protected ShadowRelativeLayout.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
+        return new ShadowRelativeLayout.LayoutParams(p);
     }
 
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
-        return p instanceof ShadowFrameLayout.LayoutParams;
+        return p instanceof ShadowRelativeLayout.LayoutParams;
     }
 }

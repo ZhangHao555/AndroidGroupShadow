@@ -1,4 +1,4 @@
-package com.ahao.shadow;
+package com.ahao.shadowlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;

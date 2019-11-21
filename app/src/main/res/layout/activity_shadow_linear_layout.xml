@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.ahao.shadow.ShadowLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ahao.shadowlayout.ShadowLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
 
     <TextView
@@ -20,10 +19,10 @@
         app:layout_yOffset="-1dp" />
 
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/text1"
         android:background="@drawable/blue_round_bg"
         app:layout_shadowColor="#80D87292"
@@ -32,11 +31,10 @@
         app:layout_xOffset="-1dp"
         app:layout_yOffset="-1dp" />
 
-    <com.ahao.shadow.ShadowLinearLayout
+    <com.ahao.shadowlayout.ShadowLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        >
+        android:padding="20dp">
 
         <TextView
             android:layout_width="100dp"
@@ -48,15 +46,15 @@
             app:layout_shadowRoundRadius="5dp" />
 
         <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="30dp"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerInParent="true"
             android:background="@drawable/red_round_bg"
             app:layout_shadowColor="#80A55454"
             app:layout_shadowRadius="8dp"
             app:layout_shadowRoundRadius="5dp" />
 
 
-    </com.ahao.shadow.ShadowLinearLayout>
-</com.ahao.shadow.ShadowLinearLayout>
+    </com.ahao.shadowlayout.ShadowLinearLayout>
+</com.ahao.shadowlayout.ShadowLinearLayout>

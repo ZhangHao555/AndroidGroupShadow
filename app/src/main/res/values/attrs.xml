@@ -1,36 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ShadowConstraintLayout_Layout">
-        <attr name="layout_xOffset" format="dimension" />
-        <attr name="layout_yOffset" format="dimension" />
-        <attr name="layout_shadowColor" format="color" />
-        <attr name="layout_shadowRadius" format="dimension" />
-        <attr name="layout_shadowRoundRadius" format="dimension" />
-    </declare-styleable>
-
-    <declare-styleable name="ShadowLinearLayout_Layout">
-        <attr name="layout_xOffset" />
-        <attr name="layout_yOffset" />
-        <attr name="layout_shadowColor" />
-        <attr name="layout_shadowRadius" />
-        <attr name="layout_shadowRoundRadius" />
-    </declare-styleable>
-
-    <declare-styleable name="ShadowRelativeLayout_Layout">
-        <attr name="layout_xOffset" />
-        <attr name="layout_yOffset" />
-        <attr name="layout_shadowColor" />
-        <attr name="layout_shadowRadius" />
-        <attr name="layout_shadowRoundRadius" />
-    </declare-styleable>
-
-    <declare-styleable name="ShadowFrameLayout_Layout">
-        <attr name="layout_xOffset" />
-        <attr name="layout_yOffset" />
-        <attr name="layout_shadowColor" />
-        <attr name="layout_shadowRadius" />
-        <attr name="layout_shadowRoundRadius" />
-    </declare-styleable>
-
 
 </resources>
