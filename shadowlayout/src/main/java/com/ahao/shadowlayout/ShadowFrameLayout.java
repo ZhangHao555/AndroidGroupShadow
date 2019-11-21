@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
@@ -15,7 +14,6 @@ import android.widget.FrameLayout;
 public class ShadowFrameLayout extends FrameLayout {
     Paint paint;
     RectF rectF = new RectF();
-    Matrix matrix;
 
     public ShadowFrameLayout(Context context) {
         this(context, null);
@@ -32,7 +30,6 @@ public class ShadowFrameLayout extends FrameLayout {
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
         this.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        matrix = new Matrix();
     }
 
     @Override

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
@@ -17,7 +16,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 public class ShadowConstraintLayout extends ConstraintLayout {
     Paint paint;
     RectF rectF = new RectF();
-    Matrix matrix;
 
     public ShadowConstraintLayout(Context context) {
         this(context, null);
@@ -34,7 +32,6 @@ public class ShadowConstraintLayout extends ConstraintLayout {
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
         this.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        matrix = new Matrix();
     }
 
     @Override
