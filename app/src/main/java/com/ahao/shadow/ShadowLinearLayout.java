@@ -89,6 +89,7 @@ public class ShadowLinearLayout extends LinearLayout {
             shadowRadius = attributes.getDimension(R.styleable.ShadowLinearLayout_Layout_layout_shadowRadius, 0);
             shadowColor = attributes.getColor(R.styleable.ShadowLinearLayout_Layout_layout_shadowColor, 0);
             shadowRoundRadius = attributes.getDimension(R.styleable.ShadowLinearLayout_Layout_layout_shadowRoundRadius, 0);
+            attributes.recycle();
         }
 
         public LayoutParams(ViewGroup.LayoutParams source) {

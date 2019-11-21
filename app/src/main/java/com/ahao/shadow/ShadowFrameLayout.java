@@ -90,6 +90,7 @@ public class ShadowFrameLayout extends FrameLayout {
             shadowRadius = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_shadowRadius, 0);
             shadowColor = attributes.getColor(R.styleable.ShadowFrameLayout_Layout_layout_shadowColor, 0);
             shadowRoundRadius = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_shadowRoundRadius, 0);
+            attributes.recycle();
         }
 
         public LayoutParams(ViewGroup.LayoutParams source) {
