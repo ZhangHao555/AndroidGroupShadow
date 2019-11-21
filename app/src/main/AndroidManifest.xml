@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name=".ShadowRelativeLayoutActivity"/>
+        <activity android:name=".ShadowLinearLayoutActivity"/>
+        <activity android:name=".ShadowConstraintLayoutActivity"/>
+        <activity android:name=".ShadowFrameLayoutActivity"/>
     </application>
 
 </manifest>

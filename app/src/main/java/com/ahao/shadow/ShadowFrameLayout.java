@@ -7,26 +7,26 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-public class ShadowConstraintLayout extends ConstraintLayout {
+public class ShadowFrameLayout extends FrameLayout {
     Paint paint;
     RectF rectF = new RectF();
     Matrix matrix;
 
-    public ShadowConstraintLayout(Context context) {
+    public ShadowFrameLayout(Context context) {
         this(context, null);
     }
 
-    public ShadowConstraintLayout(Context context, AttributeSet attrs) {
+    public ShadowFrameLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ShadowConstraintLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ShadowFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setWillNotDraw(false);
         paint = new Paint();
@@ -44,8 +44,8 @@ public class ShadowConstraintLayout extends ConstraintLayout {
         for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
             ViewGroup.LayoutParams layoutParams = child.getLayoutParams();
-            if (layoutParams instanceof ShadowConstraintLayout.LayoutParams) {
-                ShadowConstraintLayout.LayoutParams shadowLayoutParams = (LayoutParams) layoutParams;
+            if (layoutParams instanceof ShadowFrameLayout.LayoutParams) {
+                ShadowFrameLayout.LayoutParams shadowLayoutParams = (LayoutParams) layoutParams;
                 if (shadowLayoutParams.shadowRadius > 0 && shadowLayoutParams.shadowColor != Color.TRANSPARENT) {
                     rectF.left = child.getLeft();
                     rectF.right = child.getRight();
@@ -56,12 +56,13 @@ public class ShadowConstraintLayout extends ConstraintLayout {
                             , shadowLayoutParams.yOffset, shadowLayoutParams.shadowColor);
                     paint.setColor(shadowLayoutParams.shadowColor);
                     canvas.drawRoundRect(rectF, shadowLayoutParams.shadowRoundRadius, shadowLayoutParams.shadowRoundRadius, paint);
+                    paint.setShadowLayer(0, 0, 0, 0);
                 }
             }
         }
     }
 
-    public static class LayoutParams extends ConstraintLayout.LayoutParams {
+    public static class LayoutParams extends FrameLayout.LayoutParams {
         private float xOffset;
         private float yOffset;
         private int shadowColor;
@@ -72,7 +73,7 @@ public class ShadowConstraintLayout extends ConstraintLayout {
             super(width, height);
         }
 
-        public LayoutParams(ShadowConstraintLayout.LayoutParams source) {
+        public LayoutParams(ShadowFrameLayout.LayoutParams source) {
             super(source);
             xOffset = source.getXOffset();
             yOffset = source.getYOffset();
@@ -83,12 +84,12 @@ public class ShadowConstraintLayout extends ConstraintLayout {
 
         public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
-            TypedArray attributes = c.obtainStyledAttributes(attrs, R.styleable.ShadowConstraintLayout_Layout);
-            xOffset = attributes.getDimension(R.styleable.ShadowConstraintLayout_Layout_layout_xOffset, 0);
-            yOffset = attributes.getDimension(R.styleable.ShadowConstraintLayout_Layout_layout_yOffset, 0);
-            shadowRadius = attributes.getDimension(R.styleable.ShadowConstraintLayout_Layout_layout_shadowRadius, 0);
-            shadowColor = attributes.getColor(R.styleable.ShadowConstraintLayout_Layout_layout_shadowColor, 0);
-            shadowRoundRadius = attributes.getDimension(R.styleable.ShadowConstraintLayout_Layout_layout_shadowRoundRadius, 0);
+            TypedArray attributes = c.obtainStyledAttributes(attrs, R.styleable.ShadowFrameLayout_Layout);
+            xOffset = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_xOffset, 0);
+            yOffset = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_yOffset, 0);
+            shadowRadius = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_shadowRadius, 0);
+            shadowColor = attributes.getColor(R.styleable.ShadowFrameLayout_Layout_layout_shadowColor, 0);
+            shadowRoundRadius = attributes.getDimension(R.styleable.ShadowFrameLayout_Layout_layout_shadowRoundRadius, 0);
         }
 
         public LayoutParams(ViewGroup.LayoutParams source) {
@@ -136,19 +137,19 @@ public class ShadowConstraintLayout extends ConstraintLayout {
         }
     }
 
-    public ShadowConstraintLayout.LayoutParams generateLayoutParams(AttributeSet attrs) {
-        return new ShadowConstraintLayout.LayoutParams(this.getContext(), attrs);
+    public FrameLayout.LayoutParams generateLayoutParams(AttributeSet attrs) {
+        return new ShadowFrameLayout.LayoutParams(this.getContext(), attrs);
     }
 
-    protected ShadowConstraintLayout.LayoutParams generateDefaultLayoutParams() {
-        return new ShadowConstraintLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+    protected FrameLayout.LayoutParams generateDefaultLayoutParams() {
+        return new ShadowFrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
     }
 
-    protected android.view.ViewGroup.LayoutParams generateLayoutParams(android.view.ViewGroup.LayoutParams p) {
-        return new ShadowConstraintLayout.LayoutParams(p);
+    protected FrameLayout.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
+        return new ShadowFrameLayout.LayoutParams(p);
     }
 
-    protected boolean checkLayoutParams(android.view.ViewGroup.LayoutParams p) {
-        return p instanceof ShadowConstraintLayout.LayoutParams;
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
+        return p instanceof ShadowFrameLayout.LayoutParams;
     }
 }
