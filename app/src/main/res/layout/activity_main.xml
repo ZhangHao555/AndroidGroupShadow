@@ -1,74 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.ahao.shadow.ShadowConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ahao.shadow.ShadowLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:background="#ccc"
+        android:id="@+id/constraint_layout_demo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="#972626"
         android:gravity="center"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_shadowColor="#858383"
+        android:text="shadowConstraintLayoutDemo"
+        app:layout_shadowColor="#80FF6666"
+        app:layout_shadowRadius="10dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/relative_layout_demo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="#3E3CB3"
+        android:gravity="center"
+        android:text="shadowRelativeLayoutDemo"
+        app:layout_shadowColor="#3E3CB3"
         app:layout_shadowRadius="10dp"
-        app:layout_xOffset="2dp"
         app:layout_yOffset="3dp" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:background="#ff0"
+        android:id="@+id/frame_layout_demo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="#802D8823"
         android:gravity="center"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_shadowColor="#FDE6D438"
-        app:layout_shadowRadius="10dp"
-        app:layout_xOffset="2dp"
-        app:layout_yOffset="3dp" />
+        android:text="shadowFrameLayoutDemo"
+        app:layout_shadowColor="#802D8823"
+        app:layout_shadowRadius="10dp" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:background="#f00"
+        android:id="@+id/linear_layout_demo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="#BA2DC0C0"
         android:gravity="center"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_shadowColor="#FDF55353"
-        app:layout_shadowRadius="10dp"
-        app:layout_xOffset="2dp"
-        app:layout_yOffset="3dp" />
+        android:text="shadowLinearLayoutDemo"
+        app:layout_shadowColor="#80238888"
+        app:layout_shadowRadius="10dp" />
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="#3A1AF5"
-        android:gravity="center"
-        android:text="Hello World!"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_shadowColor="#DA7988EB"
-        app:layout_shadowRadius="30dp"
-        app:layout_xOffset="2dp"
-        app:layout_yOffset="3dp" />
 
-</com.ahao.shadow.ShadowConstraintLayout>
+    <com.ahao.shadow.ShadowLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/red_round_bg"
+            app:layout_shadowColor="#A55454"
+            app:layout_shadowRadius="20dp"
+            app:layout_shadowRoundRadius="5dp"
+            app:layout_xOffset="-2dp"
+            app:layout_yOffset="10dp" />
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/blue_round_bg"
+            app:layout_shadowColor="#5468A5"
+            app:layout_shadowRadius="20dp"
+            app:layout_shadowRoundRadius="5dp"
+            app:layout_yOffset="-10dp" />
+
+    </com.ahao.shadow.ShadowLinearLayout>
+
+</com.ahao.shadow.ShadowLinearLayout>
